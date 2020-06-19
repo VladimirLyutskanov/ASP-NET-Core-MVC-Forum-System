@@ -1,0 +1,18 @@
+﻿@model List<ForumApp.ViewModels.Home.IndexCategoriesViewModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h1 class="display-4 text-center">Welcome to the Forum</h1>
+<div class="card-deck">
+    @foreach (var category in @Model)
+    {
+        <div class="card m-3 row" style="min-width:18rem; max-width:30.5%;">
+            <img class="card-img-top" style="height:200px" src="@category.ImageUrl" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">@category.Name (@category.PostSCount)</h5>
+                <p class="card-text">@category.Description</p>
+                <a href="@category.Url" class="btn btn-primary" >@category.Title</a>
+            </div>
+        </div>
+    }
+</div>
